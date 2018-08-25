@@ -347,8 +347,25 @@ const weatherData = {
 
 function getCityData(city) {
     let cityIdName;
-    let cityTable;
-    let cityTableParagraph;
+    let cityDiv;
+    let cityTemperature;
+    let cityTemp;
+    let humidity;
+    let cityHumidity;
+    let pressure;
+    let cityPressure;
+    let tempMin;
+    let cityTempMin;
+    let tempMax;
+    let cityTempMax;
+    let windSpeed;
+    let cityWindSpeed;
+    let windDirection;
+    let cityWindDirection;
+    let rainLevel;
+    let cityRainLevel;
+    let snowLevel;
+    let citySnowLevel;
 
     for (let key in weatherData) {
         //access the keys
@@ -362,33 +379,54 @@ function getCityData(city) {
 
             //ADD CITY NAME
             cityIdName = "cityName" + i;
-            let cityDiv = document.getElementById(cityIdName);
+            cityDiv = document.getElementById(cityIdName);
             cityDiv.innerHTML = listData.name;
 
             //ADD TEMPERATURE TO CITY TABLE
-            let cityTemperature = "cityTemperature" + i;
-            let cityTemp = document.getElementById(cityTemperature);
-            cityTemp.innerHTML = "Temperature: " + listData.main.temp;
+            cityTemperature = "cityTemperature" + i;
+            cityTemp = document.getElementById(cityTemperature);
+            cityTemp.innerHTML = "Temperature: " + listData.main.temp + "℉";
 
             //ADD HUMIDITY TO CITY TABLE
-            let humidity = "cityHumidity" + i;
-            let cityHumidity = document.getElementById(humidity);
-            cityHumidity.innerHTML = "Humidity: " + listData.main.humidity;
+            humidity = "cityHumidity" + i;
+            cityHumidity = document.getElementById(humidity);
+            cityHumidity.innerHTML = "Humidity: " + listData.main.humidity+"%";
 
             //ADD PRESSURE TO CITY TABLE
-            let pressure = "cityPressure" + i;
-            let cityPressure = document.getElementById(pressure);
-            cityPressure.innerHTML = "Pressure: " + listData.main.pressure;
+            pressure = "cityPressure" + i;
+            cityPressure = document.getElementById(pressure);
+            cityPressure.innerHTML = "Pressure: " + listData.main.pressure+ "inHg";
 
             //ADD TEMP MIN TO CITY TABLE
-            let tempMin = "cityTempMin" + i;
-            let cityTempMin = document.getElementById(tempMin);
-            cityTempMin.innerHTML = "Minimum Temperature: " + listData.main.temp_min;
+            tempMin = "cityTempMin" + i;
+            cityTempMin = document.getElementById(tempMin);
+            cityTempMin.innerHTML = "Minimum Temperature: " + listData.main.temp_min+"℉";
 
             //ADD TEMP MAX TO CITY TABLE
-            let tempMax = "cityTempMax" + i;
-            let cityTempMax = document.getElementById(tempMax);
-            cityTempMax.innerHTML = "Maximum Temperature: " + listData.main.temp_max;
+            tempMax = "cityTempMax" + i;
+            cityTempMax = document.getElementById(tempMax);
+            cityTempMax.innerHTML = "Maximum Temperature: " + listData.main.temp_max+"℉";
+
+            //ADD WIND SPEED TO CITY TABLE
+            windSpeed = "cityWindSpeed" + i;
+            cityWindSpeed = document.getElementById(windSpeed);
+            cityWindSpeed.innerHTML = "Wind Speed: " + listData.wind.speed+"mph";
+
+            //ADD WIND DIRECTION TO CITY TABLE
+            windDirection = "cityWindDirection" + i;
+            cityWindDirection = document.getElementById(windDirection);
+            cityWindDirection.innerHTML = "Wind Direction: " + listData.wind.deg+"°";
+
+            //ADD RAIN TO CITY TABLE
+            rainLevel = "cityRain" + i;
+            cityRainLevel = document.getElementById(rainLevel);
+            cityRainLevel.innerHTML = "Rain: " + listData.rain+"inches";
+
+            //ADD SNOW TO CITY TABLE
+            snowLevel = "citySnow" + i;
+            citySnowLevel = document.getElementById(snowLevel);
+            citySnowLevel.innerHTML = "Snow: " + listData.snow+"inches";
+
         }
     }
 }
