@@ -358,6 +358,14 @@ function getCityData(city) {
     let cityTempMin;
     let tempMax;
     let cityTempMax;
+    let windSpeed;
+    let cityWindSpeed;
+    let windDirection;
+    let cityWindDirection;
+    let rainLevel;
+    let cityRainLevel;
+    let snowLevel;
+    let citySnowLevel;
 
     for (let key in weatherData) {
         //access the keys
@@ -400,12 +408,24 @@ function getCityData(city) {
             cityTempMax.innerHTML = "Maximum Temperature: " + listData.main.temp_max+"℉";
 
             //ADD WIND SPEED TO CITY TABLE
+            windSpeed = "cityWindSpeed" + i;
+            cityWindSpeed = document.getElementById(windSpeed);
+            cityWindSpeed.innerHTML = "Wind Speed: " + listData.wind.speed+"mph";
 
             //ADD WIND DIRECTION TO CITY TABLE
+            windDirection = "cityWindDirection" + i;
+            cityWindDirection = document.getElementById(windDirection);
+            cityWindDirection.innerHTML = "Wind Direction: " + listData.wind.deg+"°";
 
             //ADD RAIN TO CITY TABLE
+            rainLevel = "cityRain" + i;
+            cityRainLevel = document.getElementById(rainLevel);
+            cityRainLevel.innerHTML = "Rain: " + listData.rain+"inches";
 
             //ADD SNOW TO CITY TABLE
+            snowLevel = "citySnow" + i;
+            citySnowLevel = document.getElementById(snowLevel);
+            citySnowLevel.innerHTML = "Snow: " + listData.snow+"inches";
 
         }
     }
