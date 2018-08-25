@@ -358,7 +358,8 @@ function getCityData(city) {
             //     return (listData);
             // }
             cityIdName = "cityName" + i;
-            let cityDiv = document.getElementById("cityDiv");
+            //console.log(cityIdName);
+            let cityDiv = document.getElementById(cityIdName);
             cityDiv.innerHTML = listData.name;
         }
     }
@@ -366,4 +367,4 @@ function getCityData(city) {
 
 let cityData = getCityData("San Luis Obispo");
 
-console.log(cityData);
+//console.log(cityData);
