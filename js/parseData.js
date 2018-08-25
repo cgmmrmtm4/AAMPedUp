@@ -455,6 +455,12 @@ function getCityData(city) {
             } else {
                 citySnowLevel.innerHTML = "Snow: " + listData.snow + " inches";
             }
+
+            //UPDATE FOOTER
+            lastUpdated = document.getElementById("LastUpdated");
+            let d = new Date();
+
+            lastUpdated.innerHTML = "Last updated on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes();
         }
     }
 }
