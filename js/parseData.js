@@ -390,49 +390,70 @@ function getCityData(city) {
             //ADD HUMIDITY TO CITY TABLE
             humidity = "cityHumidity" + i;
             cityHumidity = document.getElementById(humidity);
-            cityHumidity.innerHTML = "Humidity: " + listData.main.humidity+"%";
+            cityHumidity.innerHTML = "Humidity: " + listData.main.humidity + "%";
 
             //ADD PRESSURE TO CITY TABLE
             pressure = "cityPressure" + i;
             cityPressure = document.getElementById(pressure);
-            cityPressure.innerHTML = "Pressure: " + listData.main.pressure+ "inHg";
+            cityPressure.innerHTML = "Pressure: " + Math.round((listData.main.pressure / 33.8639) * 100) / 100 + " inHg";
 
             //ADD TEMP MIN TO CITY TABLE
             tempMin = "cityTempMin" + i;
             cityTempMin = document.getElementById(tempMin);
-            cityTempMin.innerHTML = "Minimum Temperature: " + listData.main.temp_min+"℉";
+            cityTempMin.innerHTML = "Minimum Temperature: " + listData.main.temp_min + "℉";
 
             //ADD TEMP MAX TO CITY TABLE
             tempMax = "cityTempMax" + i;
             cityTempMax = document.getElementById(tempMax);
-            cityTempMax.innerHTML = "Maximum Temperature: " + listData.main.temp_max+"℉";
+            cityTempMax.innerHTML = "Maximum Temperature: " + listData.main.temp_max + "℉";
 
             //ADD WIND SPEED TO CITY TABLE
             windSpeed = "cityWindSpeed" + i;
             cityWindSpeed = document.getElementById(windSpeed);
-            cityWindSpeed.innerHTML = "Wind Speed: " + listData.wind.speed+"mph";
+            cityWindSpeed.innerHTML = "Wind Speed: " + listData.wind.speed + "mph";
 
             //ADD WIND DIRECTION TO CITY TABLE
             windDirection = "cityWindDirection" + i;
             cityWindDirection = document.getElementById(windDirection);
-            cityWindDirection.innerHTML = "Wind Direction: " + listData.wind.deg+"°";
+            //round to nearest integer
+            roundedWindDirection = Math.round(listData.wind.deg);
+            //determine wind direction
+            if (roundedWindDirection <= 22) {
+                cityWindDirection.innerHTML = "Wind Direction: N";
+            } else if (roundedWindDirection <= 67) {
+                cityWindDirection.innerHTML = "Wind Direction: NE";
+            } else if (roundedWindDirection <= 112) {
+                cityWindDirection.innerHTML = "Wind Direction: E";
+            } else if (roundedWindDirection <= 157) {
+                cityWindDirection.innerHTML = "Wind Direction: SE";
+            } else if (roundedWindDirection <= 202) {
+                cityWindDirection.innerHTML = "Wind Direction: S";
+            } else if (roundedWindDirection <= 247) {
+                cityWindDirection.innerHTML = "Wind Direction: SW";
+            } else if (roundedWindDirection <= 292) {
+                cityWindDirection.innerHTML = "Wind Direction: W";
+            } else if (roundedWindDirection <= 337) {
+                cityWindDirection.innerHTML = "Wind Direction: NW";
+            } else if (roundedWindDirection <= 360) {
+                cityWindDirection.innerHTML = "Wind Direction: N";
+            }
 
             //ADD RAIN TO CITY TABLE
             rainLevel = "cityRain" + i;
             cityRainLevel = document.getElementById(rainLevel);
             if (listData.rain === null) {
-                cityRainLevel.innerHTML = "Rain: " + "0.0"+"inches";
+                cityRainLevel.innerHTML = "Rain: " + "0.0" + " inches";
             } else {
-                cityRainLevel.innerHTML = "Rain: " + listData.rain+"inches";
+                cityRainLevel.innerHTML = "Rain: " + listData.rain + " inches";
             }
 
             //ADD SNOW TO CITY TABLE
             snowLevel = "citySnow" + i;
             citySnowLevel = document.getElementById(snowLevel);
             if (listData.snow === null) {
-                citySnowLevel.innerHTML = "Snow: " + "0.0"+"inches";
+                citySnowLevel.innerHTML = "Snow: " + "0.0" + " inches";
             } else {
-                citySnowLevel.innerHTML = "Snow: " + listData.snow+"inches";
+                citySnowLevel.innerHTML = "Snow: " + listData.snow + " inches";
             }
         }
     }
