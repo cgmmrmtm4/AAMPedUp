@@ -22,7 +22,7 @@ body{
     text-align:center;
     text-shadow: 2px 2px 4px #000000;
     color: gainsboro; 
-    background-color: rgb(39, 79, 190);
+    background-color: rgb(255, 255, 255);
     /*background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");*/
     background-repeat: no-repeat;
     background-size: 100% 100%; 
@@ -39,12 +39,12 @@ body{
     background-size: 100% 100%; 
 }
 .city2{
-    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-image: url("https://ihg.scene7.com/is/image/ihg/holiday-inn-express-grover-beach-4364470448-2x1");
     background-repeat: no-repeat;
     background-size: 100% 100%; 
 }
 .city3{
-    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-image: url("https://www.planetware.com/photos-large/USCA/san-luis-obispo-oceano-dunes.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%; 
 }
@@ -64,7 +64,7 @@ body{
     background-size: 100% 100%; 
 }
 .city7{
-    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-image: url("https://slochamber.org/wp-content/uploads/2014/10/CalPolyPeaks_4148.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%; 
 }
@@ -74,7 +74,7 @@ body{
     background-size: 100% 100%; 
 }
 .city9{
-    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-image: url("https://www.cityofsantamaria.org/Home/ShowImage?id=248&t=635555543502070000");
     background-repeat: no-repeat;
     background-size: 100% 100%; 
 }
