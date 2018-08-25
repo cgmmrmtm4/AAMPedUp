@@ -420,13 +420,20 @@ function getCityData(city) {
             //ADD RAIN TO CITY TABLE
             rainLevel = "cityRain" + i;
             cityRainLevel = document.getElementById(rainLevel);
-            cityRainLevel.innerHTML = "Rain: " + listData.rain+"inches";
+            if (listData.rain === null) {
+                cityRainLevel.innerHTML = "Rain: " + "0.0"+"inches";
+            } else {
+                cityRainLevel.innerHTML = "Rain: " + listData.rain+"inches";
+            }
 
             //ADD SNOW TO CITY TABLE
             snowLevel = "citySnow" + i;
             citySnowLevel = document.getElementById(snowLevel);
-            citySnowLevel.innerHTML = "Snow: " + listData.snow+"inches";
-
+            if (listData.snow === null) {
+                citySnowLevel.innerHTML = "Snow: " + "0.0"+"inches";
+            } else {
+                citySnowLevel.innerHTML = "Snow: " + listData.snow+"inches";
+            }
         }
     }
 }
