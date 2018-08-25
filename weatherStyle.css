@@ -17,7 +17,7 @@ body{
    
 }
 .allTen{
-    font-size:80px;
+    font-size:55px;
     font-family: Arial, Helvetica, sans-serif; padding-bottom: 25px; padding-top: 50px;
     text-align:center;
     text-shadow: 2px 2px 4px #000000;
@@ -89,6 +89,15 @@ footer{
 
 }
 
+.transbox{
+    margin: 30px;
+    background-color: #151414;
+    border: 1px solid black;
+    opacity: 0.6;
+    width: 40%;
+    filter: alpha(opacity=30);
+    margin: auto;
+}
 .temperature{
    font-size: 20px;
    text-shadow: 2px 2px 4px #000000;
