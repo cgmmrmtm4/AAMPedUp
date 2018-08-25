@@ -398,6 +398,15 @@ function getCityData(city) {
             tempMax = "cityTempMax" + i;
             cityTempMax = document.getElementById(tempMax);
             cityTempMax.innerHTML = "Maximum Temperature: " + listData.main.temp_max+"℉";
+
+            //ADD WIND SPEED TO CITY TABLE
+
+            //ADD WIND DIRECTION TO CITY TABLE
+
+            //ADD RAIN TO CITY TABLE
+
+            //ADD SNOW TO CITY TABLE
+
         }
     }
 }
