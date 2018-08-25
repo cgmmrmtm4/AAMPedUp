@@ -174,7 +174,7 @@ const weatherData = {
         },
         {
             "id": 5332963,
-            "name": "Callender",
+            "name": "Avila Beach",
             "coord": {
                 "lat": 35.053,
                 "lon": -120.5963
@@ -208,17 +208,17 @@ const weatherData = {
         },
         {
             "id": 5392329,
-            "name": "San Luis Obispo County",
+            "name": "Paso Robles",
             "coord": {
                 "lat": 35.3666,
                 "lon": -120.5344
             },
             "main": {
-                "temp": 59.04,
+                "temp": 98.84,
                 "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 57.2,
-                "temp_max": 60.8
+                "humidity": 88,
+                "temp_min": 78.2,
+                "temp_max": 99.8
             },
             "dt": 1534258560,
             "wind": {
@@ -276,7 +276,7 @@ const weatherData = {
         },
         {
             "id": 5372954,
-            "name": "Miles",
+            "name": "Morro Bay",
             "coord": {
                 "lat": 35.1855,
                 "lon": -120.7033
@@ -348,8 +348,8 @@ const weatherData = {
 function getCityData(city) {
     let cityIdName;
     let cityDiv;
+    let temperature;
     let cityTemperature;
-    let cityTemp;
     let humidity;
     let cityHumidity;
     let pressure;
@@ -382,80 +382,112 @@ function getCityData(city) {
             cityDiv = document.getElementById(cityIdName);
             cityDiv.innerHTML = listData.name;
 
-            //ADD TEMPERATURE TO CITY TABLE
-            cityTemperature = "cityTemperature" + i;
-            cityTemp = document.getElementById(cityTemperature);
-            cityTemp.innerHTML = "Temperature: " + listData.main.temp + "℉";
+            //UPDATE FOOTER
+            lastUpdated = document.getElementById("LastUpdated");
+            let d = new Date();
 
-            //ADD HUMIDITY TO CITY TABLE
-            humidity = "cityHumidity" + i;
-            cityHumidity = document.getElementById(humidity);
-            cityHumidity.innerHTML = "Humidity: " + listData.main.humidity + "%";
-
-            //ADD PRESSURE TO CITY TABLE
-            pressure = "cityPressure" + i;
-            cityPressure = document.getElementById(pressure);
-            cityPressure.innerHTML = "Pressure: " + Math.round((listData.main.pressure / 33.8639) * 100) / 100 + " inHg";
-
-            //ADD TEMP MIN TO CITY TABLE
-            tempMin = "cityTempMin" + i;
-            cityTempMin = document.getElementById(tempMin);
-            cityTempMin.innerHTML = "Minimum Temperature: " + listData.main.temp_min + "℉";
-
-            //ADD TEMP MAX TO CITY TABLE
-            tempMax = "cityTempMax" + i;
-            cityTempMax = document.getElementById(tempMax);
-            cityTempMax.innerHTML = "Maximum Temperature: " + listData.main.temp_max + "℉";
-
-            //ADD WIND SPEED TO CITY TABLE
-            windSpeed = "cityWindSpeed" + i;
-            cityWindSpeed = document.getElementById(windSpeed);
-            cityWindSpeed.innerHTML = "Wind Speed: " + listData.wind.speed + "mph";
-
-            //ADD WIND DIRECTION TO CITY TABLE
-            windDirection = "cityWindDirection" + i;
-            cityWindDirection = document.getElementById(windDirection);
-            //round to nearest integer
-            roundedWindDirection = Math.round(listData.wind.deg);
-            //determine wind direction
-            if (roundedWindDirection <= 22) {
-                cityWindDirection.innerHTML = "Wind Direction: N";
-            } else if (roundedWindDirection <= 67) {
-                cityWindDirection.innerHTML = "Wind Direction: NE";
-            } else if (roundedWindDirection <= 112) {
-                cityWindDirection.innerHTML = "Wind Direction: E";
-            } else if (roundedWindDirection <= 157) {
-                cityWindDirection.innerHTML = "Wind Direction: SE";
-            } else if (roundedWindDirection <= 202) {
-                cityWindDirection.innerHTML = "Wind Direction: S";
-            } else if (roundedWindDirection <= 247) {
-                cityWindDirection.innerHTML = "Wind Direction: SW";
-            } else if (roundedWindDirection <= 292) {
-                cityWindDirection.innerHTML = "Wind Direction: W";
-            } else if (roundedWindDirection <= 337) {
-                cityWindDirection.innerHTML = "Wind Direction: NW";
-            } else if (roundedWindDirection <= 360) {
-                cityWindDirection.innerHTML = "Wind Direction: N";
-            }
-
-            //ADD RAIN TO CITY TABLE
-            rainLevel = "cityRain" + i;
-            cityRainLevel = document.getElementById(rainLevel);
-            if (listData.rain === null) {
-                cityRainLevel.innerHTML = "Rain: " + "0.0" + " inches";
-            } else {
-                cityRainLevel.innerHTML = "Rain: " + listData.rain + " inches";
-            }
-
-            //ADD SNOW TO CITY TABLE
-            snowLevel = "citySnow" + i;
-            citySnowLevel = document.getElementById(snowLevel);
-            if (listData.snow === null) {
-                citySnowLevel.innerHTML = "Snow: " + "0.0" + " inches";
-            } else {
-                citySnowLevel.innerHTML = "Snow: " + listData.snow + " inches";
-            }
+            lastUpdated.innerHTML = "Last updated on " + (d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear() + " at " + d.getHours()+":"+d.getMinutes();
         }
+         //ADD TEMPERATURE TO CITY TABLE
+         temperature = document.createElement("p");
+         temperature.className = "temperature";
+         cityTemperature = document.createTextNode("This is a paragraph");
+         temperature.appendChild(cityTemperature);
+         document.getElementById("cityTable"+i).appendChild(temperature);
+         temperature.innerHTML = "Temperature: " + listData.main.temp + "℉";
+
+         // //ADD HUMIDITY TO CITY TABLE
+         humidity = document.createElement("p");
+         humidity.className = "humidity";
+         cityHumidity = document.createTextNode("This is a paragraph");
+         humidity.appendChild(cityHumidity);
+         document.getElementById("cityTable"+i).appendChild(humidity);
+         humidity.innerHTML = "Humidity: " + listData.main.humidity + "%";
+
+         // //ADD PRESSURE TO CITY TABLE
+         pressure = document.createElement("p");
+         pressure.className = "pressure";
+         cityPressure = document.createTextNode("This is a paragraph");
+         pressure.appendChild(cityPressure);
+         document.getElementById("cityTable"+i).appendChild(pressure);
+         pressure.innerHTML = "Pressure: " + Math.round((listData.main.pressure / 33.8639) * 100) / 100 + " inHg";
+
+         // //ADD TEMP MIN TO CITY TABLE
+         tempMin = document.createElement("p");
+         tempMin.className = "tempMin";
+         cityTempMin = document.createTextNode("This is a paragraph");
+         tempMin.appendChild(cityTempMin);
+         document.getElementById("cityTable"+i).appendChild(tempMin);
+         tempMin.innerHTML = "Minimum Temperature: " + listData.main.temp_min + "℉";
+
+         // //ADD TEMP MAX TO CITY TABLE
+         tempMax = document.createElement("p");
+         tempMax.className = "tempMax";
+         cityTempMax = document.createTextNode("This is a paragraph");
+         tempMax.appendChild(cityTempMax);
+         document.getElementById("cityTable"+i).appendChild(tempMax);
+         tempMax.innerHTML = "Maximum Temperature: " + listData.main.temp_max + "℉";
+
+         // //ADD WIND SPEED TO CITY TABLE
+         windSpeed = document.createElement("p");
+         windSpeed.className = "windSpeed";
+         cityWindSpeed = document.createTextNode("This is a paragraph");
+         windSpeed.appendChild(cityWindSpeed);
+         document.getElementById("cityTable"+i).appendChild(windSpeed);
+         windSpeed.innerHTML = "Wind Speed: " + listData.wind.speed + "mph";
+
+         // //ADD WIND DIRECTION TO CITY TABLE
+         windDirection = document.createElement("p");
+         windDirection.className = "windDirection";
+         cityWindDirection = document.createTextNode("This is a paragraph");
+         windDirection.appendChild(cityWindDirection);
+         document.getElementById("cityTable"+i).appendChild(windDirection);
+         // round to nearest integer
+         roundedWindDirection = Math.round(listData.wind.deg);
+         //determine wind direction
+         if (roundedWindDirection <= 22) {
+             windSpeed.innerHTML = "Wind Direction: N";
+         } else if (roundedWindDirection <= 67) {
+             windSpeed.innerHTML = "Wind Direction: NE";
+         } else if (roundedWindDirection <= 112) {
+             windSpeed.innerHTML = "Wind Direction: E";
+         } else if (roundedWindDirection <= 157) {
+             windSpeed.innerHTML = "Wind Direction: SE";
+         } else if (roundedWindDirection <= 202) {
+             windSpeed.innerHTML = "Wind Direction: S";
+         } else if (roundedWindDirection <= 247) {
+             windSpeed.innerHTML = "Wind Direction: SW";
+         } else if (roundedWindDirection <= 292) {
+             windSpeed.innerHTML = "Wind Direction: W";
+         } else if (roundedWindDirection <= 337) {
+             windSpeed.innerHTML = "Wind Direction: NW";
+         } else if (roundedWindDirection <= 360) {
+             windSpeed.innerHTML = "Wind Direction: N";
+         }
+
+         // //ADD RAIN TO CITY TABLE
+         rainLevel = document.createElement("p");
+         rainLevel.className = "rainLevel";
+         cityRainLevel = document.createTextNode("This is a paragraph");
+         rainLevel.appendChild(cityRainLevel);
+         document.getElementById("cityTable"+i).appendChild(rainLevel);
+         if (listData.rain === null) {
+             rainLevel.innerHTML = "Rain: " + "0.0" + " inches";
+         } else {
+             rainLevel.innerHTML = "Rain: " + listData.rain + " inches";
+         }
+
+         // //ADD SNOW TO CITY TABLE
+         snowLevel = document.createElement("p");
+         snowLevel.className = "snowLevel";
+         citySnowLevel = document.createTextNode("This is a paragraph");
+         snowLevel.appendChild(citySnowLevel);
+         document.getElementById("cityTable"+i).appendChild(snowLevel);
+         if (listData.snow === null) {
+             snowLevel.innerHTML = "Snow: " + "0.0" + " inches";
+         } else {
+             snowLevel.innerHTML = "Snow: " + listData.snow + " inches";
+         }
     }
 }
 
