@@ -346,19 +346,25 @@ const weatherData = {
 };
 
 function getCityData(city) {
+    let cityIdName;
+
     for (let key in weatherData) {
         //access the keys
         for (let i = 0; i < weatherData.list.length; i++) {
             //accessing List Array, list of objects
             let listData = weatherData.list[i];
             //access individual City data
-            if (listData.name === city) {
-                return (listData);
-            }
+            // if (listData.name === city) {
+            //     return (listData);
+            // }
+            cityIdName = "cityName" + i;
+            //console.log(cityIdName);
+            let cityDiv = document.getElementById(cityIdName);
+            cityDiv.innerHTML = listData.name;
         }
     }
 }
 
 let cityData = getCityData("San Luis Obispo");
 
-console.log(cityData);
+//console.log(cityData);
