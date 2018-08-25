@@ -174,7 +174,7 @@ const weatherData = {
         },
         {
             "id": 5332963,
-            "name": "Avila Beach",
+            "name": "Callender",
             "coord": {
                 "lat": 35.053,
                 "lon": -120.5963
@@ -208,17 +208,17 @@ const weatherData = {
         },
         {
             "id": 5392329,
-            "name": "Paso Robles",
+            "name": "San Luis Obispo County",
             "coord": {
                 "lat": 35.3666,
                 "lon": -120.5344
             },
             "main": {
-                "temp": 98.84,
+                "temp": 59.04,
                 "pressure": 1014,
-                "humidity": 88,
-                "temp_min": 78.2,
-                "temp_max": 99.8
+                "humidity": 87,
+                "temp_min": 57.2,
+                "temp_max": 60.8
             },
             "dt": 1534258560,
             "wind": {
@@ -276,7 +276,7 @@ const weatherData = {
         },
         {
             "id": 5372954,
-            "name": "Morro Bay",
+            "name": "Miles",
             "coord": {
                 "lat": 35.1855,
                 "lon": -120.7033
