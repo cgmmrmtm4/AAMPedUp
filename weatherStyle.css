@@ -23,10 +23,60 @@ body{
     text-shadow: 2px 2px 4px #000000;
     color: gainsboro; 
     background-color: rgb(39, 79, 190);
-    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    /*background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");*/
     background-repeat: no-repeat;
     background-size: 100% 100%; 
     margin: 0px;
+}
+.city0{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+.city1{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+.city2{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+.city3{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+.city4{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+.city5{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+.city6{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+.city7{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+.city8{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+.city9{
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
 }
 
 footer{
