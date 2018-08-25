@@ -346,15 +346,20 @@ const weatherData = {
 };
 
 function getCityData(city) {
+    let cityIdName;
+
     for (let key in weatherData) {
         //access the keys
         for (let i = 0; i < weatherData.list.length; i++) {
             //accessing List Array, list of objects
             let listData = weatherData.list[i];
             //access individual City data
-            if (listData.name === city) {
-                return (listData);
-            }
+            // if (listData.name === city) {
+            //     return (listData);
+            // }
+            cityIdName = "cityName" + i;
+            let cityDiv = document.getElementById("cityDiv");
+            cityDiv.innerHTML = listData.name;
         }
     }
 }
