@@ -347,6 +347,8 @@ const weatherData = {
 
 function getCityData(city) {
     let cityIdName;
+    let cityTable;
+    let cityTableParagraph;
 
     for (let key in weatherData) {
         //access the keys
@@ -357,10 +359,36 @@ function getCityData(city) {
             // if (listData.name === city) {
             //     return (listData);
             // }
+
+            //ADD CITY NAME
             cityIdName = "cityName" + i;
-            //console.log(cityIdName);
             let cityDiv = document.getElementById(cityIdName);
             cityDiv.innerHTML = listData.name;
+
+            //ADD TEMPERATURE TO CITY TABLE
+            let cityTemperature = "cityTemperature" + i;
+            let cityTemp = document.getElementById(cityTemperature);
+            cityTemp.innerHTML = "Temperature: " + listData.main.temp;
+
+            //ADD HUMIDITY TO CITY TABLE
+            let humidity = "cityHumidity" + i;
+            let cityHumidity = document.getElementById(humidity);
+            cityHumidity.innerHTML = "Humidity: " + listData.main.humidity;
+
+            //ADD PRESSURE TO CITY TABLE
+            let pressure = "cityPressure" + i;
+            let cityPressure = document.getElementById(pressure);
+            cityPressure.innerHTML = "Pressure: " + listData.main.pressure;
+
+            //ADD TEMP MIN TO CITY TABLE
+            let tempMin = "cityTempMin" + i;
+            let cityTempMin = document.getElementById(tempMin);
+            cityTempMin.innerHTML = "Minimum Temperature: " + listData.main.temp_min;
+
+            //ADD TEMP MAX TO CITY TABLE
+            let tempMax = "cityTempMax" + i;
+            let cityTempMax = document.getElementById(tempMax);
+            cityTempMax.innerHTML = "Maximum Temperature: " + listData.main.temp_max;
         }
     }
 }
