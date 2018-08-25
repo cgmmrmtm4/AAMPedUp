@@ -6,22 +6,22 @@ body {
 }
 
 .mainHeader {
-    width: 80%;
+    width: 100%;
     margin: auto;
-    font-size: 60px;
+    font-size: 80px;
     font-family: Arial, Helvetica, sans-serif;
-    padding-bottom: 25px;
     padding-top: 25px;
     text-align: center;
-    color: black;
+    color: white;
     /*background-color: rgb(39, 79, 190);*/
+    background-color: rgb(100, 128, 206, 1);
 }
 
 .allTen {
     font-size: 55px;
     font-family: Arial, Helvetica, sans-serif;
-    padding-bottom: 25px;
-    padding-top: 50px;
+    padding-bottom: 0px;
+    padding-top: 0px;
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
     color: gainsboro;
@@ -109,7 +109,7 @@ footer {
     background-color: #151414;
     border: 1px solid black;
     opacity: 0.8;
-    width: 40%;
+    width: 37%;
     filter: alpha(opacity=30);
     margin: auto;
     border-radius: 100px;
